@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+	body 
+	{
+        	background : linear-gradient(45deg, #00ffff, #0000ff);
+    	}
+    	#container 
+	{
+        	height: 60%;
+        	width : 20%;
+        	border : 1px solid;
+        	position : absolute;
+        	left : 32%;
+        	top : 20%;
+        	border-radius :  40px;;
+        	background-color : rgba(0,0,0,0.5);
+        	padding : 20px;
+        	color : aqua;
+    	}   
+    	
+	#screen
+	{
+		height : 15%;
+		width : 30 %;
+		border-radius : 20px;
+		background-color : rgba(0,0,0,0.5);
+        	color : aqua;
+        	border-color  : aqua;
+		
+	}
+    	#btn 
+	{
+        	height : 15%;
+        	width : 20%;
+        	border-radius : 20px;
+        	background-color : rgba(0,0,0,0.5);
+        	color : aqua;
+        	border-color  : aqua;
+		
+    	}
+    	#btn:not(:hover) 
+	{
+        	scale : 0.8;
+        	capacity : 0.5;
+    	}
+    	#btnzero 
+	{
+        	height : 15%;
+        	width : 70%;
+       		border-radius : 20px;
+        	background-color : rgba(0,0,0,0.5);
+        	color : aqua;
+        	border-color  : aqua;
+		
+    	}
+    	#btnzero:not(:hover) 
+	{
+        	scale : 0.8;
+        	capacity : 0.5;
+    	}
+</style>
+
+<script>
+	function appendValue(value) 
+	{
+		
+        	document.getElementById("screen").textContent += value;
+    	}
+
+    	function clearScreen() 
+	{
+        	document.getElementById("screen").innerHTML = "";
+    	}
+
+	function calculateResult() 
+	{
+        	var result = eval(document.getElementById("screen").innerText);
+        	document.getElementById("screen").innerText = result;
+    	}
+</script>
+</head>
+<body>
+    <div id="container">
+        <div id="screen">
+		&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="scrren1">
+		</div>
+        </div>
+        <br>    
+        
+	<br>
+        <input id="btn" type="button" value="AC" onclick="clearScreen()"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="C" onclick="clearScreen()"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="%" onclick="appendValue('%')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="/" onclick="appendValue('/')"></input>
+    
+        <br>
+        <input id="btn" type="button" value="7" onclick="appendValue('7')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="8" onclick="appendValue('8')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="9" onclick="appendValue('9')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="*" onclick="appendValue('*')"></input>
+    
+        <br>
+    
+        <input id="btn" type="button" value="4" onclick="appendValue('4')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="5" onclick="appendValue('5')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="6" onclick="appendValue('6')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="-" onclick="appendValue('-')"></input>
+
+        <br>
+        
+        <input id="btn" type="button" value="1" onclick="appendValue('1')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="2" onclick="appendValue('2')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="3" onclick="appendValue('3')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="+" onclick="appendValue('+')"></input>
+    
+        <br><br>
+    
+        <input id="btnzero" type="button" value="0" onclick="appendValue('0')"></input>
+        &nbsp;&nbsp;&nbsp;
+        <input id="btn" type="button" value="=" onclick="calculateResult()"></input>
+    </div>
+</body>
+</html>
